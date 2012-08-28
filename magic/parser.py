@@ -18,6 +18,10 @@ def parse_mana(tree):
     mana = tree.cssselect('#ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_manaRow .value img')
     mana = (mana.get('alt') for mana in mana)
     mana = imap(coerce_mana, mana)
+    mana = tuple(mana)
+
+    if len(mana) == 0:
+        mana = None
 
     return mana
 

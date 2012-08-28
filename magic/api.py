@@ -53,6 +53,4 @@ def card_to_json(card):
     card = card._asdict()
     card = dict(card)
 
-    card['mana'] = tuple(card['mana'])
-
     return dumps(card)
