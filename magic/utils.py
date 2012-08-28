@@ -15,7 +15,7 @@ def format_paragraph(element):
     # Handle images
     if element.tag == 'img':
         if element.get('alt') is not None:
-            formatted_element.append(element.get('alt'))
+            formatted_element.append('({})'.format(element.get('alt')))
 
             # "Pretty print"
             if element.getnext() is not None:
