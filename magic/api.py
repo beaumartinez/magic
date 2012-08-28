@@ -38,6 +38,7 @@ def get_card(url):
     converted_mana = parser.parse_converted_mana(tree)
     type_ = parser.parse_type(tree)
     text = parser.parse_text(tree)
+    flavour_text = parser.parse_flavour_text(tree)
     attack_defence = parser.parse_attack_defence(tree)
     set_ = parser.parse_set(tree)
     rarity = parser.parse_rarity(tree)
@@ -46,7 +47,7 @@ def get_card(url):
     rating = parser.parse_rating(tree)
     image = parser.parse_image(tree, url)
 
-    return Card(artist=artist, attack_defence=attack_defence, converted_mana=converted_mana, image=image, mana=mana, name=name, number=number, rarity=rarity, rating=rating, set=set_, text=text, type=type_, url=url)
+    return Card(artist=artist, attack_defence=attack_defence, converted_mana=converted_mana, image=image, flavour_text=flavour_text, mana=mana, name=name, number=number, rarity=rarity, rating=rating, set=set_, text=text, type=type_, url=url)
 
 def card_to_json(card):
     card = card._asdict()
