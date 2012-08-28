@@ -45,6 +45,16 @@ def parse_text(tree):
 
     return text
 
+def parse_flavour_text(tree):
+    flavour_text = tree.cssselect('#ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_FlavorText .cardtextbox')
+    flavour_text = imap(format_paragraph, flavour_text)
+    flavour_text = '\n'.join(flavour_text)
+
+    if flavour_text == '':
+        flavour_text = None
+
+    return flavour_text
+
 def parse_attack_defence(tree):
     attack_defence = tree.cssselect('#ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_ptRow .value')
 
