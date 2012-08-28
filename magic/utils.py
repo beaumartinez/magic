@@ -12,7 +12,7 @@ def format_paragraph(element):
     if element.text is not None:
         formatted_element.append(element.text)
 
-    # Handle mana
+    # Handle images
     if element.tag == 'img':
         if element.get('alt') is not None:
             formatted_element.append(element.get('alt'))
