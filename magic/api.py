@@ -1,5 +1,3 @@
-from json import dumps
-
 from lxml.html import fromstring
 from requests import get
 
@@ -48,9 +46,3 @@ def get_card(url):
     image = parser.parse_image(tree, url)
 
     return Card(artist=artist, converted_mana=converted_mana, image=image, flavour_text=flavour_text, mana=mana, name=name, number=number, power=power, rarity=rarity, rating=rating, set=set_, text=text, toughness=toughness, type=type_, url=url)
-
-def card_to_json(card):
-    card = card._asdict()
-    card = dict(card)
-
-    return dumps(card)
