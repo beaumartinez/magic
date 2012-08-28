@@ -1,3 +1,6 @@
+from itertools import imap
+from re import findall
+
 def coerce_mana(mana):
     try:
         mana = int(mana)
@@ -31,3 +34,9 @@ def format_paragraph(element):
     formatted_element = ''.join(formatted_element)
 
     return formatted_element
+
+def split_power_toughness(power_toughness):
+    power, toughness = findall('(\d+)', power_toughness)
+    power, toughness = imap(int, (power, toughness))
+
+    return power, toughness
