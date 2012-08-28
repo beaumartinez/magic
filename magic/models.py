@@ -2,13 +2,13 @@ from collections import namedtuple
 
 Card = namedtuple('Card', (
     'artist',
-    'attack_defence',
     'converted_mana',
     'flavour_text',
     'image',
     'mana',
     'name',
     'number',
+    'power_toughness',
     'rarity',
     'rating',
     'set',

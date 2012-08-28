@@ -64,18 +64,18 @@ def parse_flavour_text(tree):
 
     return flavour_text
 
-def parse_attack_defence(tree):
-    attack_defence = tree.cssselect('#ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_ptRow .value')
+def parse_power_toughness(tree):
+    power_toughness = tree.cssselect('#ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_ptRow .value')
 
     try:
-        attack_defence = attack_defence[0]
+        power_toughness = power_toughness[0]
     except IndexError:
-        attack_defence = None
+        power_toughness = None
     else:
-        attack_defence = attack_defence.text
-        attack_defence = attack_defence.strip()
+        power_toughness = power_toughness.text
+        power_toughness = power_toughness.strip()
 
-    return attack_defence
+    return power_toughness
 
 def parse_set(tree):
     set_ = tree.cssselect('#ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_currentSetSymbol a')
