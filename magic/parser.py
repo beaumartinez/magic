@@ -27,10 +27,15 @@ def parse_mana(tree):
 
 def parse_converted_mana(tree):
     converted_mana = tree.cssselect('#ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_cmcRow .value')
-    converted_mana = converted_mana[0]
-    converted_mana = converted_mana.text
-    converted_mana = converted_mana.strip()
-    converted_mana = int(converted_mana)
+
+    try:
+        converted_mana = converted_mana[0]
+    except IndexError:
+        converted_mana = None
+    else:
+        converted_mana = converted_mana.text
+        converted_mana = converted_mana.strip()
+        converted_mana = int(converted_mana)
 
     return converted_mana
 
