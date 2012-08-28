@@ -69,7 +69,7 @@ def parse_attack_defence(tree):
     return attack_defence
 
 def parse_set(tree):
-    set_ = tree.cssselect('#ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_setRow .value a')
+    set_ = tree.cssselect('#ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_currentSetSymbol a')
     set_ = set_[1]
     set_ = set_.text
 
