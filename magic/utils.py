@@ -19,7 +19,8 @@ def format_paragraph(element):
 
             # "Pretty print"
             if element.getnext() is not None:
-                formatted_element.append(' ')
+                if element.tail is None:
+                    formatted_element.append(' ')
 
     for child in element:
         formatted_element.extend(format_paragraph(child))
