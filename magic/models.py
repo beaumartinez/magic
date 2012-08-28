@@ -8,11 +8,12 @@ Card = namedtuple('Card', (
     'mana',
     'name',
     'number',
-    'power_toughness',
+    'power',
     'rarity',
     'rating',
     'set',
     'text',
+    'toughness',
     'type',
     'url',
 ))

@@ -39,7 +39,7 @@ def get_card(url):
     type_ = parser.parse_type(tree)
     text = parser.parse_text(tree)
     flavour_text = parser.parse_flavour_text(tree)
-    power_toughness = parser.parse_power_toughness(tree)
+    power, toughness = parser.parse_power_toughness(tree)
     set_ = parser.parse_set(tree)
     rarity = parser.parse_rarity(tree)
     number = parser.parse_number(tree)
@@ -47,7 +47,7 @@ def get_card(url):
     rating = parser.parse_rating(tree)
     image = parser.parse_image(tree, url)
 
-    return Card(artist=artist, converted_mana=converted_mana, image=image, flavour_text=flavour_text, mana=mana, name=name, number=number, power_toughness=power_toughness, rarity=rarity, rating=rating, set=set_, text=text, type=type_, url=url)
+    return Card(artist=artist, converted_mana=converted_mana, image=image, flavour_text=flavour_text, mana=mana, name=name, number=number, power=power, rarity=rarity, rating=rating, set=set_, text=text, toughness=toughness, type=type_, url=url)
 
 def card_to_json(card):
     card = card._asdict()

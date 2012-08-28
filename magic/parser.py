@@ -2,7 +2,7 @@ from itertools import ifilter, imap
 from urlparse import urljoin
 
 from magic.models import Rating
-from magic.utils import coerce_mana, format_paragraph
+from magic.utils import coerce_mana, format_paragraph, split_power_toughness
 
 # Cards
 
@@ -70,12 +70,14 @@ def parse_power_toughness(tree):
     try:
         power_toughness = power_toughness[0]
     except IndexError:
-        power_toughness = None
+        power, toughness = None, None
     else:
         power_toughness = power_toughness.text
         power_toughness = power_toughness.strip()
 
-    return power_toughness
+        power, toughness = split_power_toughness(power_toughness)
+
+    return power, toughness
 
 def parse_set(tree):
     set_ = tree.cssselect('#ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_currentSetSymbol a')
