@@ -4,6 +4,7 @@ Card = namedtuple('Card', (
     'artist',
     'attack_defence',
     'converted_mana',
+    'flavour_text',
     'image',
     'mana',
     'name',
