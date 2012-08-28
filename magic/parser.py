@@ -95,10 +95,15 @@ def parse_rarity(tree):
 
 def parse_number(tree):
     number = tree.cssselect('#ctl00_ctl00_ctl00_MainContent_SubContent_SubContent_numberRow .value')
-    number = number[0]
-    number = number.text
-    number = number.strip()
-    number = int(number)
+
+    try:
+        number = number[0]
+    except IndexError:
+        number = None
+    else:
+        number = number.text
+        number = number.strip()
+        number = int(number)
 
     return number
 
