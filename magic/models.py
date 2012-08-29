@@ -29,10 +29,10 @@ class Card(Card):
         return as_dict
 
     def to_json(self):
-        as_dict = self._asdict()
-        as_dict = dict(as_dict)
+        as_dict = self.to_dict()
+        as_json = dumps(as_dict)
 
-        return dumps(as_dict)
+        return as_json
 
 Rating = namedtuple('Rating', (
     'rating',
