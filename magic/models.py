@@ -22,6 +22,12 @@ Card = namedtuple('Card', (
 
 class Card(Card):
 
+    def to_dict(self):
+        as_dict = self._asdict()
+        as_dict = dict(as_dict)
+
+        return as_dict
+
     def to_json(self):
         as_dict = self._asdict()
         as_dict = dict(as_dict)
